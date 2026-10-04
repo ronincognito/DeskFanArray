@@ -44,7 +44,8 @@ The complete UI design sketch is in [docs/images/ui-overview.png](docs/images/ui
 | ESP32-S3 touch LCD, 1.47" | Waveshare board; runs the UI and generates the six PWM signals |
 | 6 x 80x80 mm PWM case fans | Xilence XPF80.R PWM in this build (12 V). Each fan's PWM wire goes to its own GPIO pin |
 | Buck converter | 12 V in, 5 V out; powers the ESP board |
-| 12 V DC supply + switch | Main switch on the +12 V line |
+| 12 V DC supply | Powers the fans directly and the controller via the buck converter |
+| On/off toggle switch | Mounted on the case behind the display; switches the +12 V line to both the buck converter and the fans |
 | 3D-printed housing | Two case halves and a midsection, from the Fusion 360 model |
 | 4 x M3 bolts + nuts | Mount the two case halves to the midsection |
 | 4 x M2 bolts | Mount the controller to the midsection |
@@ -53,7 +54,7 @@ Any fan will do as long as it accepts a PWM input. If your fans need a voltage o
 
 ## Wiring
 
-All fans share the 12 V rail and a common ground with the ESP board. The buck converter drops 12 V to 5 V for the controller, and six GPIO pins send PWM signals to the fans.
+The 12 V supply passes through the on/off toggle switch, which feeds the 12 V rail for the six fans and the buck converter. All fans share a common ground with the ESP board. The buck converter drops 12 V to 5 V for the controller, and six GPIO pins send PWM signals to the fans.
 
 ![Wiring diagram](docs/images/wiring.png)
 
