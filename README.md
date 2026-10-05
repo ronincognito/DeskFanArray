@@ -80,4 +80,4 @@ DeskFanArray/
 
 ## License
 
-Not yet specified.
+Released under the [MIT License](LICENSE). Copyright (c) 2026 ronincognito.
